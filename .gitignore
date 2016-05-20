@@ -1,0 +1,44 @@
+#Geraldine Naranjo"
+#python3
+#facturacion
+print("       ELIJA EL PRODUCTO DESEADO")
+print("")
+print("PRODUCTO                         CODIGO")
+print("")
+print("pilas................................ 1")
+print("linterna............................. 2")
+print("cuerda............................... 3")
+print("cepillo.............................. 4")
+print("conectores........................... 5")
+print("bombillos............................ 6")
+print("precintos............................ 7")
+print("martillo............................. 8")
+print("desarmador........................... 9")
+print("cinta aislante...................... 10")
+print("")
+cliente=input("Nombre del Cliente: ")
+def factura():
+
+                 res = "s"
+                 fac = []
+                 iva=15/100
+                 productos = {1: 100, 2: 500, 3: 50, 4: 200, 5: 150, 6: 180, 7: 120, 8: 1000, 9: 800, 10: 280}
+                 while res == "s":
+                            codigo = int(input("Ingrese CODIGO DE PRODUCTO: "))
+                            cantidad = int(input("Cantidad: "))
+                            res = input("Desea comprar otro articulo S/N?")
+                            total = cantidad * (productos[codigo])
+                            fac.append(total)
+                            suma = 0
+                            i = 0
+                 while i < len(fac):
+                     suma = suma + fac[i]
+                     i= i + 1
+                 print("\n\n\n\n")
+                 print("**************************")
+                 print("Ferreteria Algo.")
+                 print("Cliente: "+cliente+".")
+                 print("EL TOTAL ES", suma," Bs.")
+                 print("TOTAL+IVA", suma+(suma*iva)," Bs.")
+                 print("**************************")
+factura()
